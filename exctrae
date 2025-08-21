@@ -1,0 +1,19 @@
+import requests
+from bs4 import BeautifulSoup
+
+url = "https://www.bbc.com/news"
+
+
+response = requests.get(url)
+
+
+soup = BeautifulSoup(response.text, "html.parser")
+
+
+print("Website Title:", soup.title.string)
+
+
+print("\nTop Headlines:")
+headlines = soup.find_all("h3")
+for i, h in enumerate(headlines[:10], start=1):  # show first 10
+    print(f"{i}. {h.get_text(strip=True)}")
