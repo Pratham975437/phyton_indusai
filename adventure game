@@ -1,0 +1,21 @@
+def adventure_game():
+    print("🎮 Welcome to the Game!")
+    print("You are standing at the entrance of a cave.")
+    
+    choice1 = input("Do you want to ENTER the cave or RUN away? (enter/run): ").lower()
+
+    if choice1 == "enter":
+        print("You walk inside the cave...")
+        choice2 = input("You see two paths. Do you go LEFT or RIGHT? (left/right): ").lower()
+
+        if choice2 == "left":
+            print("You found a treasure chest full of gold! ,You win! ")
+        elif choice2 == "right":
+            print("Oh no! A dragon appeared  and you lost the game ")
+        else:
+            print("Invalid choice. Game over!")
+
+    elif choice1 == "run":
+        print("You ran away safely, but missed the adventure!  GOOD CHOICE ")
+    else:
+        print("Invalid choice. Game over!")
